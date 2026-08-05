@@ -1,0 +1,30 @@
+{
+  "name": "@chriscdn/type-guards",
+  "version": "0.0.1",
+  "description": "Simple TypeScript type guards for cleaner, more readable code.",
+  "repository": "https://github.com/chriscdn/type-guards",
+  "author": "Christopher Meyer <chris@schwiiz.org>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "watch": "pn build --watch",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.8",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.8"
+  },
+  "files": [
+    "lib"
+  ],
+  "sideEffects": false
+}
