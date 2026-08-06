@@ -118,8 +118,17 @@ const isFormData = (value: unknown): value is FormData =>
  */
 const isBlob = (value: unknown): value is Blob => value instanceof Blob;
 
+/**
+ * Returns true if every element in the array satisfies the given type guard.
+ */
+const isArrayOf = <T>(
+  value: unknown,
+  cb: (value: unknown) => value is T,
+): value is T[] => isArray(value) && value.every(cb);
+
 export {
   isArray,
+  isArrayOf,
   isBigInt,
   isBlob,
   isBoolean,

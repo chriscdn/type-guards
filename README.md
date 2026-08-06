@@ -25,28 +25,29 @@ function greet(name: unknown) {
 
 ## API
 
-| Function                   | Returns true for                                         |
-| -------------------------- | -------------------------------------------------------- |
-| `isDefined(value)`         | Anything that is **not** `null` or `undefined`           |
-| `isUndefined(value)`       | Exactly `undefined`                                      |
-| `isNull(value)`            | Exactly `null`                                           |
-| `isNullish(value)`         | `null` **or** `undefined`                                |
-| `isString(value)`          | Strings                                                  |
-| `isStringWithValue(value)` | Strings with content (not empty, not just whitespace)    |
-| `isInteger(value)`         | Finite, whole numbers                                    |
-| `isNumber(value)`          | Finite numbers (excludes `NaN`, `Infinity`, `-Infinity`) |
-| `isArray(value)`           | Arrays                                                   |
-| `isPlainObject(value)`     | Plain `{ }` objects, not arrays, not class instances     |
-| `isBoolean(value)`         | Booleans                                                 |
-| `isBigInt(value)`          | BigInts                                                  |
-| `isSymbol(value)`          | Symbols                                                  |
-| `isFunction(value)`        | Functions                                                |
-| `isDate(value)`            | Valid `Date` instances (invalid dates return `false`)    |
-| `isRegExp(value)`          | `RegExp` instances                                       |
-| `isPromise(value)`         | `Promise` instances                                      |
-| `isError(value)`           | `Error` instances                                        |
-| `isFormData(value)`        | `FormData` instances                                     |
-| `isBlob(value)`            | `Blob` instances                                         |
+| Function                   | Returns true for                                             |
+| -------------------------- | ------------------------------------------------------------ |
+| `isDefined(value)`         | Anything that is **not** `null` or `undefined`               |
+| `isUndefined(value)`       | Exactly `undefined`                                          |
+| `isNull(value)`            | Exactly `null`                                               |
+| `isNullish(value)`         | `null` **or** `undefined`                                    |
+| `isString(value)`          | Strings                                                      |
+| `isStringWithValue(value)` | Strings with content (not empty, not just whitespace)        |
+| `isInteger(value)`         | Finite, whole numbers                                        |
+| `isNumber(value)`          | Finite numbers (excludes `NaN`, `Infinity`, `-Infinity`)     |
+| `isArray(value)`           | Arrays                                                       |
+| `isArrayOf(value, cb)`     | Arrays where every element satisfies the provided type guard |
+| `isPlainObject(value)`     | Plain `{ }` objects, not arrays, not class instances         |
+| `isBoolean(value)`         | Booleans                                                     |
+| `isBigInt(value)`          | BigInts                                                      |
+| `isSymbol(value)`          | Symbols                                                      |
+| `isFunction(value)`        | Functions                                                    |
+| `isDate(value)`            | Valid `Date` instances (invalid dates return `false`)        |
+| `isRegExp(value)`          | `RegExp` instances                                           |
+| `isPromise(value)`         | `Promise` instances                                          |
+| `isError(value)`           | `Error` instances                                            |
+| `isFormData(value)`        | `FormData` instances                                         |
+| `isBlob(value)`            | `Blob` instances                                             |
 
 Most of these do exactly what their name suggests. A few are worth a closer look:
 

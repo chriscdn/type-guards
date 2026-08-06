@@ -85,6 +85,10 @@ declare const isFormData: (value: unknown) => value is FormData;
  * Returns true if the value is a Blob instance.
  */
 declare const isBlob: (value: unknown) => value is Blob;
+/**
+ * Returns true if every element in the array satisfies the given type guard.
+ */
+declare const isArrayOf: <T>(value: unknown, cb: (value: unknown) => value is T) => value is T[];
 //#endregion
-export { isArray, isBigInt, isBlob, isBoolean, isDate, isDefined, isError, isFormData, isFunction, isInteger, isNull, isNullish, isNumber, isPlainObject, isPromise, isRegExp, isString, isStringWithValue, isSymbol, isUndefined };
+export { isArray, isArrayOf, isBigInt, isBlob, isBoolean, isDate, isDefined, isError, isFormData, isFunction, isInteger, isNull, isNullish, isNumber, isPlainObject, isPromise, isRegExp, isString, isStringWithValue, isSymbol, isUndefined };
 //# sourceMappingURL=index.d.ts.map
