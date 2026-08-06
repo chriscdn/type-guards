@@ -1,6 +1,6 @@
 {
   "name": "@chriscdn/type-guards",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple TypeScript type guards for cleaner, more readable code.",
   "repository": "https://github.com/chriscdn/type-guards",
   "author": "Christopher Meyer <chris@schwiiz.org>",
