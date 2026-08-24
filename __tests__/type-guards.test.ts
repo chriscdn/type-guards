@@ -1,5 +1,14 @@
 import { describe, expect, test } from "vitest";
-import { isDefined, isFunction, isPromise, isUndefined } from "../src/index";
+import {
+  isArrayOf,
+  isDefined,
+  isDefinedOrNull,
+  isFunction,
+  isNumber,
+  isPromise,
+  isString,
+  isUndefined,
+} from "../src/index";
 
 const add = (a: number, b: number) => a + b;
 const addAsync = async (a: number, b: number) => a + b;
@@ -55,5 +64,30 @@ describe("isFunction", () => {
 
   test("async", () => {
     expect(isFunction(addAsync)).toBe(true);
+  });
+});
+
+describe("isArrayOf", () => {
+  test("number[]", () => {
+    expect(isArrayOf([1, 2, 3], isNumber)).toBe(true);
+  });
+
+  test("string[]", () => {
+    expect(isArrayOf(["1", "2", "3"], isString)).toBe(true);
+  });
+
+  test("stringbroken[]", () => {
+    expect(isArrayOf(["1", "2", 3], isString)).toBe(false);
+  });
+
+  test("mixed[]", () => {
+    expect(
+      isArrayOf(["1", "2", 3], (value) => isString(value) || isNumber(value)),
+    ).toBe(true);
+  });
+
+  test("isDefinedOrNull", () => {
+    expect(isDefinedOrNull(null)).toBe(true);
+    expect(isDefinedOrNull(0)).toBe(true);
   });
 });

@@ -15,6 +15,11 @@ const isUndefined = (value: unknown): value is undefined => value === undefined;
 const isNull = (value: unknown): value is null => value === null;
 
 /**
+ * Returns true if the value is defined or `null`.
+ */
+const isDefinedOrNull = (value: unknown) => isDefined(value) || isNull(value);
+
+/**
  * Returns true if the value is either `null` or `undefined`.
  */
 const isNullish = (value: unknown): value is null | undefined =>
@@ -148,4 +153,5 @@ export {
   isStringWithValue,
   isSymbol,
   isUndefined,
+  isDefinedOrNull,
 };
